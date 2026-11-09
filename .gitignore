@@ -1,0 +1,19 @@
+# Local credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+
+# Temporary and operating-system files
+*.tmp
+*.log
+*.bak
+Thumbs.db
+.DS_Store
+node_modules/
+
+# Redundant image extracts from the unrelated presentation.
+# Keep local inspection copies; these are not website or instructional assets.
+docs/inspection/brief-*.png
