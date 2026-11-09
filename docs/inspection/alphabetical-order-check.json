@@ -1,0 +1,56 @@
+{
+  "input": [
+    "אבני",
+    "ברגר",
+    "ברוך",
+    "ברמן",
+    "ברק",
+    "ברש",
+    "גפן"
+  ],
+  "sorted": [
+    "אבני",
+    "ברגר",
+    "ברוך",
+    "ברמן",
+    "ברק",
+    "ברש",
+    "גפן"
+  ],
+  "orderMatches": true,
+  "adjacentComparisons": [
+    {
+      "before": "אבני",
+      "after": "ברגר",
+      "comparison": -1
+    },
+    {
+      "before": "ברגר",
+      "after": "ברוך",
+      "comparison": -3
+    },
+    {
+      "before": "ברוך",
+      "after": "ברמן",
+      "comparison": -7
+    },
+    {
+      "before": "ברמן",
+      "after": "ברק",
+      "comparison": -6
+    },
+    {
+      "before": "ברק",
+      "after": "ברש",
+      "comparison": -2
+    },
+    {
+      "before": "ברש",
+      "after": "גפן",
+      "comparison": -1
+    }
+  ],
+  "insertionIndex": 4,
+  "previous": "ברמן",
+  "next": "ברש"
+}

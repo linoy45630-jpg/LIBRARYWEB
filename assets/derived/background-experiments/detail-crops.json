@@ -1,0 +1,30 @@
+﻿[
+    {
+        "Candidate":  "short-720",
+        "Mode":  "clean",
+        "StartY":  255,
+        "Width":  512,
+        "Height":  320
+    },
+    {
+        "Candidate":  "short-720",
+        "Mode":  "marked",
+        "StartY":  255,
+        "Width":  512,
+        "Height":  320
+    },
+    {
+        "Candidate":  "long-1440",
+        "Mode":  "clean",
+        "StartY":  635,
+        "Width":  512,
+        "Height":  320
+    },
+    {
+        "Candidate":  "long-1440",
+        "Mode":  "marked",
+        "StartY":  635,
+        "Width":  512,
+        "Height":  320
+    }
+]

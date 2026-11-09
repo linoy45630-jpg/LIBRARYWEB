@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="מוצאים ספר בספרייה — יחידת למידה לילדי כיתות ד׳–ו׳ בספרייה העירונית לילדים בין השורות.">
+  <meta name="theme-color" content="#124b4b">
+  <title>מוצאים ספר בספרייה | בין השורות</title>
+  <link rel="stylesheet" href="css/vendor/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">דילוג לתוכן הראשי</a>
+  <div class="review-banner" role="note">תצוגה לבדיקת עיצוב · שלב 2 <span>הרקע זמני. פעילויות הלמידה יתווספו לאחר אישור המבנה.</span></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#opening" aria-label="בין השורות — לפתיחה"><strong>בין השורות</strong><span>הספרייה העירונית לילדים</span></a>
+      <nav aria-label="ניווט ראשי ביחידת הלמידה">
+        <ul class="nav-links"><li><a href="#opening" aria-current="location">ברוכים הבאים</a></li><li><a href="#secret-1">סוד ראשון</a></li><li><a href="#secret-2">סוד שני</a></li><li><a href="#secret-3">סוד שלישי</a></li><li><a href="#assessment">בודקים מה למדנו</a></li></ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="library-page">
+    <noscript><p class="paper-panel">להצגת תוכן היחידה נדרשת הפעלת JavaScript בדפדפן.</p></noscript>
+    <section id="opening" class="hero paper-panel" aria-labelledby="page-title">
+      <div class="hero-copy"><p class="eyebrow">יחידת למידה · הספרייה העירונית לילדים</p><h1 id="page-title">מוצאים ספר<br><em>בספרייה</em></h1><p class="hero-welcome" data-copy="welcome"></p><div class="unit-meta"><span>לכיתות ד׳–ו׳</span><span>כ־10 דקות</span><span>שלושה סודות</span></div><a class="asset-button" href="#storyboard">נכנסים לספרייה <span aria-hidden="true">←</span></a></div>
+      <div class="hero-character"><img src="assets/derived/components/owl-welcome.png" alt="הינשופה הספרנית מחזיקה ספר ומברכת לשלום" width="490" height="503" fetchpriority="high"><span class="character-label">הינשופה הספרנית</span></div>
+      <div class="hero-footnote"><span class="tiny-rule"></span><span>כרטיס הספר · סוג הספר · שם המחבר</span><span class="tiny-rule"></span></div>
+    </section>
+    <section id="storyboard" class="storyboard paper-panel" aria-labelledby="story-title">
+      <div class="section-heading"><p class="eyebrow">ברוכים הבאים לספרייה הקסומה</p><h2 id="story-title">הכירו את תולי</h2><p class="stage-note">מציין מקום זמני לסרטון הפתיחה · הדיאלוג המאושר מוצג בכתב.</p></div>
+      <div class="story-layout"><img class="tuli-image" src="assets/derived/components/tuli-excited.png" alt="תולי, תולעת הספרים, מתלהב מהספרייה" width="432" height="710" loading="lazy"><div class="story-scenes" id="opening-scenes"></div></div>
+      <a class="asset-button wide-button" href="#secret-1">לסוד הראשון — לכל ספר יש מקום מיוחד</a>
+      <template id="intro-video-template"><figure><video controls preload="metadata" playsinline aria-label="סרטון הפתיחה"><track kind="captions" srclang="he" label="עברית"></video><figcaption>תמליל סרטון הפתיחה</figcaption></figure></template>
+    </section>
+    <section id="secret-1" class="lesson paper-panel" aria-labelledby="secret-1-title">
+      <div class="section-heading"><p class="eyebrow">הסוד הראשון</p><h2 id="secret-1-title">לכל ספר יש מקום מיוחד</h2></div>
+      <div data-dialogue="secret1Instruction"></div>
+      <p class="stage-note" id="books-status">תצוגת מבנה בלבד — פתיחת הספרים לפי הסדר תתווסף בשלב האינטראקציות.</p>
+      <div class="discovery-shelf" aria-describedby="books-status"><ol id="discovery-books" class="discovery-books"></ol><div class="wood-shelf" aria-hidden="true"></div></div>
+      <div class="section-bottom"><span>ארבעה ספרים · סוד אחד</span><a href="#secret-2" class="text-link">לסוד השני <span aria-hidden="true">←</span></a></div>
+    </section>
+    <section id="secret-2" class="lesson paper-panel" aria-labelledby="secret-2-title">
+      <div class="section-heading"><p class="eyebrow">הסוד השני</p><h2 id="secret-2-title">מזהים את סוג הספר</h2></div>
+      <div data-dialogue="secret2Explanation"></div>
+      <div class="row g-4 align-items-center lesson-grid"><div class="col-lg-5"><div data-book-card></div></div><div class="col-lg-7"><p class="card-prompt" data-copy="secret2Prompt"></p><div id="genre-shelves" class="genre-shelves"></div><p class="stage-note">תצוגת המדפים — הבחירה והמשוב יתווספו בהמשך.</p></div></div>
+      <div class="section-bottom"><span>כרטיס הספר והמדפים</span><a href="#secret-3" class="text-link">לסוד השלישי <span aria-hidden="true">←</span></a></div>
+    </section>
+    <section id="secret-3" class="lesson paper-panel" aria-labelledby="secret-3-title">
+      <div class="section-heading"><p class="eyebrow">הסוד השלישי</p><h2 id="secret-3-title">בעקבות שם המחבר</h2></div>
+      <div data-dialogue="secret3Explanation"></div>
+      <div class="row g-4 align-items-center lesson-grid"><div class="col-lg-5"><div data-book-card></div></div><div class="col-lg-7"><div class="shelf-sign">פנטזיה</div><p class="stage-note">תצוגת מדף בלבד · החיפוש המדורג והכנסת הספר יתווספו לאחר אישור שלב 2.</p><div class="author-shelf" aria-label="מדף דוגמה המסודר לפי שמות המשפחה"><ul id="author-books"></ul><div class="wood-shelf" aria-hidden="true"></div></div><p class="sample-note">שמות המחברים בדוגמה זמניים ובדיוניים.</p></div></div>
+      <div class="section-bottom"><span>ממשיכים בעקבות שם המשפחה</span><a href="#assessment" class="text-link">לבדיקת מה שלמדנו <span aria-hidden="true">←</span></a></div>
+    </section>
+    <section id="assessment" class="assessment paper-panel" aria-labelledby="assessment-title">
+      <div class="section-heading"><p class="eyebrow">הבוחן המסכם</p><h2 id="assessment-title">בודקים מה למדנו!</h2></div>
+      <p class="stage-note">תצוגה מקדימה של מבנה הבוחן — המענה והבדיקה עדיין אינם פעילים.</p>
+      <div class="question"><p class="question-number">שאלה 1</p><h3>מסדרים את שלבי החיפוש</h3><p data-copy="assessmentInstruction"></p><ol id="assessment-cards" class="assessment-cards" aria-label="שלושת שלבי החיפוש, בסדר מעורבב"></ol><button class="asset-button" disabled>בדיקת התשובה</button></div>
+      <p class="pending-note">שאלות נוספות ממתינות לפיתוח ולאישור.</p>
+    </section>
+    <section id="completion" class="completion paper-panel" aria-labelledby="completion-title"><p class="eyebrow">בסוף הדרך</p><h2 id="completion-title">סיום היחידה</h2><p class="pending-note">נוסח הסיום ממתין לאישור.</p><a href="#opening" class="text-link">חזרה לפתיחה <span aria-hidden="true">↑</span></a></section>
+  </main>
+  <footer class="site-footer"><strong>בין השורות</strong><span>מוצאים ספר בספרייה</span><p>תצוגת מבנה ועיצוב · הרקע זמני · פרטי זכויות וקרדיטים יושלמו לאחר אימות המקורות.</p><button class="footer-link" id="open-component-preview">תצוגת חלונית לדוגמה</button></footer>
+  <dialog id="component-dialog" class="instruction-dialog" aria-labelledby="dialog-title"><div class="dialog-surface"><button type="button" class="close-dialog" aria-label="סגירת החלונית">×</button><p class="eyebrow">תצוגת רכיב · חלונית הדרכה</p><h2 id="dialog-title">מכירים את כרטיס הספר</h2><p id="dialog-copy"></p><div data-book-card></div><button class="asset-button close-dialog-action">סגירה</button></div></dialog>
+</body>
+</html>

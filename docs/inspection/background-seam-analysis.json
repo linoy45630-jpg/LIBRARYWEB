@@ -1,0 +1,72 @@
+{
+  "method": "Mean absolute RGB difference in 13-pixel bands sampled every 3 rows / 8 columns; 0 is identical. Candidate crop only; not visual QA or seamless approval.",
+  "source": "ספרייה קלאסית עם מדרגות לולייניות.png",
+  "width": 1024,
+  "height": 1536,
+  "best": [
+    {
+      "top": 504,
+      "period": 720,
+      "bottomExclusive": 1224,
+      "stairMAE": 43.60476190476191,
+      "shelfMAE": 5.697318007662835,
+      "combined": 24.651039956212372
+    },
+    {
+      "top": 508,
+      "period": 720,
+      "bottomExclusive": 1228,
+      "stairMAE": 47.25873015873016,
+      "shelfMAE": 10.323371647509578,
+      "combined": 28.791050903119867
+    },
+    {
+      "top": 504,
+      "period": 724,
+      "bottomExclusive": 1228,
+      "stairMAE": 46.287301587301585,
+      "shelfMAE": 17.131800766283526,
+      "combined": 31.709551176792555
+    },
+    {
+      "top": 512,
+      "period": 720,
+      "bottomExclusive": 1232,
+      "stairMAE": 48.73809523809524,
+      "shelfMAE": 16.32030651340996,
+      "combined": 32.5292008757526
+    },
+    {
+      "top": 224,
+      "period": 708,
+      "bottomExclusive": 932,
+      "stairMAE": 58.80952380952381,
+      "shelfMAE": 7.885823754789272,
+      "combined": 33.34767378215654
+    },
+    {
+      "top": 500,
+      "period": 720,
+      "bottomExclusive": 1220,
+      "stairMAE": 49.92857142857143,
+      "shelfMAE": 17.02375478927203,
+      "combined": 33.47616310892173
+    },
+    {
+      "top": 508,
+      "period": 724,
+      "bottomExclusive": 1232,
+      "stairMAE": 48.57936507936508,
+      "shelfMAE": 19.555555555555557,
+      "combined": 34.067460317460316
+    },
+    {
+      "top": 508,
+      "period": 716,
+      "bottomExclusive": 1224,
+      "stairMAE": 47.58253968253968,
+      "shelfMAE": 21.770114942528735,
+      "combined": 34.67632731253421
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+﻿[
+    {
+        "value":  [
+                      {
+                          "Source":  "חמישה תנוחות של ינשופת ספרנית.png",
+                          "Output":  "owl-welcome.png",
+                          "X":  15,
+                          "Y":  0,
+                          "Width":  490,
+                          "Height":  503
+                      },
+                      {
+                          "Source":  "גיליון כפתורים מעוטרים בשלושה צבעים.png",
+                          "Output":  "button-teal-normal.png",
+                          "X":  17,
+                          "Y":  173,
+                          "Width":  580,
+                          "Height":  188
+                      },
+                      {
+                          "Source":  "גיליון כפתורים מעוטרים בשלושה צבעים.png",
+                          "Output":  "button-teal-hover.png",
+                          "X":  602,
+                          "Y":  173,
+                          "Width":  580,
+                          "Height":  188
+                      },
+                      {
+                          "Source":  "גיליון כפתורים מעוטרים בשלושה צבעים.png",
+                          "Output":  "button-teal-disabled.png",
+                          "X":  1189,
+                          "Y":  173,
+                          "Width":  580,
+                          "Height":  188
+                      }
+                  ],
+        "Count":  4
+    },
+    {
+        "Source":  "חמשת מצבי הרוח של תולי წიგნიერ.png",
+        "Output":  "tuli-excited.png",
+        "X":  0,
+        "Y":  0,
+        "Width":  432,
+        "Height":  710
+    },
+    {
+        "Source":  "ארבע בועות דיבור דקורטיביות בזהב וטורקיז.png",
+        "Output":  "speech-oval.png",
+        "X":  42,
+        "Y":  30,
+        "Width":  680,
+        "Height":  448
+    }
+]

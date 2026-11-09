@@ -1,0 +1,20 @@
+{
+  "desktopWidths": [
+    1440,
+    1024,
+    768
+  ],
+  "desktopTileWidth": "viewport width",
+  "mobile": {
+    "viewportWidth": 390,
+    "tileWidth": 512,
+    "alignment": "left",
+    "rightSideCropped": true
+  },
+  "scaling": "uniform only",
+  "markers": {
+    "cyan": "external tile boundary",
+    "pink": "internal composite seam"
+  },
+  "verification": "Static raster previews, not browser or website tests"
+}

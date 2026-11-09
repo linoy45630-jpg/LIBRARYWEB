@@ -1,0 +1,83 @@
+{
+  "syntaxChecked": [
+    "components.js",
+    "content.js",
+    "main.js",
+    "provisional-content.js"
+  ],
+  "approvedStringsMatchSpec": true,
+  "missingApprovedStrings": [],
+  "assessmentSteps": 3,
+  "httpResources": [
+    {
+      "path": "css/vendor/bootstrap.rtl.min.css",
+      "status": 200
+    },
+    {
+      "path": "css/styles.css",
+      "status": 200
+    },
+    {
+      "path": "js/main.js",
+      "status": 200
+    },
+    {
+      "path": "assets/derived/components/owl-welcome.png",
+      "status": 200
+    },
+    {
+      "path": "assets/derived/components/tuli-excited.png",
+      "status": 200
+    },
+    {
+      "path": "assets/ספרייה קלאסית עם מדרגות לולייניות.png",
+      "status": 200
+    },
+    {
+      "path": "assets/derived/components/button-teal-normal.png",
+      "status": 200
+    },
+    {
+      "path": "assets/derived/components/button-teal-hover.png",
+      "status": 200
+    },
+    {
+      "path": "assets/derived/components/button-teal-disabled.png",
+      "status": 200
+    },
+    {
+      "path": "assets/derived/components/speech-oval.png",
+      "status": 200
+    },
+    {
+      "path": "assets/מסגרת משחק וינטג׳ מוזהבת עם עיטורי כוכבים.png",
+      "status": 200
+    },
+    {
+      "path": "assets/מסגרת משחק וינטג׳ מוזהבת על קלף.png",
+      "status": 200
+    },
+    {
+      "path": "js/content.js",
+      "status": 200
+    },
+    {
+      "path": "js/components.js",
+      "status": 200
+    },
+    {
+      "path": "js/provisional-content.js",
+      "status": 200
+    },
+    {
+      "path": "assets/כרטיס פרטי ספר מעוטר בעברית.png",
+      "status": 200
+    }
+  ],
+  "usesExperimentalBackgrounds": false,
+  "backgroundVariableCount": 1,
+  "browserQA": "Unavailable: IAB host unavailable; native Computer Use stopped because URL could not be determined safely.",
+  "anchorTargetsValid": true,
+  "duplicateIDs": [],
+  "previewStatus": 200
+}
