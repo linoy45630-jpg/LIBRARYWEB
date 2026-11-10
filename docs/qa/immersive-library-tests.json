@@ -1,0 +1,549 @@
+{
+  "date": "2026-11-10",
+  "total": 119,
+  "environment": "Node minimal DOM, synthetic speech events and mocked voice lists; no real layout or audio",
+  "suites": {
+    "secret1": [
+      {
+        "test": "Exactly four books; only book 1 initially available",
+        "passed": true
+      },
+      {
+        "test": "Locked book cannot open, even through dispatched click",
+        "passed": true
+      },
+      {
+        "test": "Book 1 exact content; no book card; no early unlock",
+        "passed": true
+      },
+      {
+        "test": "Close button completes book 1 and returns focus",
+        "passed": true
+      },
+      {
+        "test": "Review does not unlock another book",
+        "passed": true
+      },
+      {
+        "test": "Book 2 hides card; Escape cancel path completes it and restores focus",
+        "passed": true
+      },
+      {
+        "test": "Book 3 first displays the reusable card with provisional values",
+        "passed": true
+      },
+      {
+        "test": "Review of early book removes card and does not finish book 4",
+        "passed": true
+      },
+      {
+        "test": "Book 4 closing reveals exact two-speaker summary and enables next",
+        "passed": true
+      },
+      {
+        "test": "Reviews never duplicate closing dialogue or card",
+        "passed": true
+      },
+      {
+        "test": "Next navigates only after completion and moves focus to existing heading",
+        "passed": true
+      }
+    ],
+    "secret2": [
+      {
+        "test": "Book card displays fantasy and no invented publication year",
+        "passed": true
+      },
+      {
+        "test": "Four native shelf buttons with real Hebrew signs",
+        "passed": true
+      },
+      {
+        "test": "Transition is initially locked, including dispatched clicks",
+        "passed": true
+      },
+      {
+        "test": "Wrong selection gives exact approved feedback without completing",
+        "passed": true
+      },
+      {
+        "test": "Feedback dismissal returns focus to the attempted shelf",
+        "passed": true
+      },
+      {
+        "test": "Repeated wrong attempts remain available and are announced again",
+        "passed": true
+      },
+      {
+        "test": "Correct selection highlights shelf and genre, with exact success text",
+        "passed": true
+      },
+      {
+        "test": "Success unlocks transition and shows exact Tuli then owl dialogue",
+        "passed": true
+      },
+      {
+        "test": "Closing success feedback preserves highlights and success",
+        "passed": true
+      },
+      {
+        "test": "Subsequent selections cannot contradict success or duplicate dialogue",
+        "passed": true
+      },
+      {
+        "test": "Enabled next button targets the existing Secret 3 heading",
+        "passed": true
+      },
+      {
+        "test": "All Secret 2 dialogue is present verbatim in the authoritative extraction",
+        "passed": true
+      }
+    ],
+    "secret3": [
+      {
+        "test": "Revised six-surname sequence is explicitly Hebrew-sorted",
+        "passed": true
+      },
+      {
+        "test": "Target exists initially and all existing books have title and author",
+        "passed": true
+      },
+      {
+        "test": "Surname is required before either groups or books can advance",
+        "passed": true
+      },
+      {
+        "test": "Surname click shows the original shelf and highlights first letter",
+        "passed": true
+      },
+      {
+        "test": "Repeated first-letter errors do not advance",
+        "passed": true
+      },
+      {
+        "test": "First-letter choice narrows to B without removing the target",
+        "passed": true
+      },
+      {
+        "test": "Wrong second letters allow retries and do not complete",
+        "passed": true
+      },
+      {
+        "test": "Third-letter comparison highlights one letter per name and keeps target unselected",
+        "passed": true
+      },
+      {
+        "test": "Existing books become selectable only at the final search step",
+        "passed": true
+      },
+      {
+        "test": "Wrong existing book shows revised feedback with unlimited retry",
+        "passed": true
+      },
+      {
+        "test": "Correct existing book is highlighted, not inserted or replaced",
+        "passed": true
+      },
+      {
+        "test": "Success displays approved owl and Tuli completion once",
+        "passed": true
+      },
+      {
+        "test": "Sorted shelf and enabled assessment navigation remain functional",
+        "passed": true
+      },
+      {
+        "test": "Old gap and insertion interaction is removed",
+        "passed": true
+      },
+      {
+        "test": "Approved revised Secret 3 strings match the new specification",
+        "passed": true
+      }
+    ],
+    "flow": [
+      {
+        "test": "Prerequisites block visits and completion of future stages",
+        "passed": true
+      },
+      {
+        "test": "Completed content can be reviewed without clearing progress",
+        "passed": true
+      },
+      {
+        "test": "DOM stage manager shows only opening initially and locks progress links",
+        "passed": true
+      },
+      {
+        "test": "Progress and forged hashes cannot bypass interactions",
+        "passed": true
+      },
+      {
+        "test": "Opening skip/start unlocks Secret 1 and focuses its heading",
+        "passed": true
+      },
+      {
+        "test": "Completion callbacks unlock one next stage while review keeps state",
+        "passed": true
+      },
+      {
+        "test": "Completion is unavailable before assessment completion",
+        "passed": true
+      },
+      {
+        "test": "Completion home and learn-again are functional review actions",
+        "passed": true
+      },
+      {
+        "test": "Normal assessment contains all five questions and optional Secret 1 check remains off",
+        "passed": true
+      },
+      {
+        "test": "Completion uses revised approved wording without scores",
+        "passed": true
+      }
+    ],
+    "assessment": [
+      {
+        "test": "All five questions are active in the normal fixed sequence",
+        "passed": true
+      },
+      {
+        "test": "Question 1 has exactly the newly requested three step texts",
+        "passed": true
+      },
+      {
+        "test": "Unanswered, partial and incorrect sequence states never unlock next",
+        "passed": true
+      },
+      {
+        "test": "Sequence DOM contains three relevant illustrations and drag alternatives",
+        "passed": true
+      },
+      {
+        "test": "Up/down controls operate without dragging and restore control focus",
+        "passed": true
+      },
+      {
+        "test": "Select-position alternative uses the same ordering model",
+        "passed": true
+      },
+      {
+        "test": "Drag/drop reorders correctly and checking never automatically skips feedback",
+        "passed": true
+      },
+      {
+        "test": "Question 2 uses the existing book card and validates author field",
+        "passed": true
+      },
+      {
+        "test": "Repeated wrong selections stay on question 2 and do not reveal the answer",
+        "passed": true
+      },
+      {
+        "test": "Question 3 uses four illustrated shelves in the requested order and a new genre",
+        "passed": true
+      },
+      {
+        "test": "Question 4 validates explicit Hebrew ordering and shows book spines",
+        "passed": true
+      },
+      {
+        "test": "Question 5 replaces the weak draft and qualifies the comparison to listed options",
+        "passed": true
+      },
+      {
+        "test": "Completion remains locked until question 5 is answered correctly",
+        "passed": true
+      },
+      {
+        "test": "Finish unlocks existing completion only after explicit confirmation",
+        "passed": true
+      },
+      {
+        "test": "Revisiting completed content preserves quiz position, answers and finish navigation",
+        "passed": true
+      },
+      {
+        "test": "All five questions show one heading at a time with accurate progress",
+        "passed": true
+      },
+      {
+        "test": "Unanswered radio validation and success guard prevent contradictory feedback",
+        "passed": true
+      },
+      {
+        "test": "No score/timer/mistake counter or partial-assessment gate is rendered",
+        "passed": true
+      }
+    ],
+    "narration": [
+      {
+        "test": "No narration before explicit audio interaction",
+        "passed": true
+      },
+      {
+        "test": "Enable chooses Hebrew voice and child-friendly rate",
+        "passed": true
+      },
+      {
+        "test": "Animation lifecycle follows start, pause, resume and end",
+        "passed": true
+      },
+      {
+        "test": "Replay keeps exact current line and cancels previous audio",
+        "passed": true
+      },
+      {
+        "test": "New dialogue cancels narration; stale callbacks cannot change scene",
+        "passed": true
+      },
+      {
+        "test": "One Hebrew voice is shared when no second voice exists",
+        "passed": true
+      },
+      {
+        "test": "Selected Hebrew voices map consistently to characters without guessing gender",
+        "passed": true
+      },
+      {
+        "test": "Mute cancels, survives new lines, and replay never unmutes",
+        "passed": true
+      },
+      {
+        "test": "Stop invalidates callbacks including completion callback",
+        "passed": true
+      },
+      {
+        "test": "Speech errors return recoverable state",
+        "passed": true
+      },
+      {
+        "test": "Missing Hebrew voice fails gracefully without unrelated voice",
+        "passed": true
+      },
+      {
+        "test": "Missing speech API does not throw",
+        "passed": true
+      },
+      {
+        "test": "Characters use independent original-derived image elements",
+        "passed": true
+      },
+      {
+        "test": "Dialogue events preserve speaker and exact text without learning mutation",
+        "passed": true
+      },
+      {
+        "test": "Silent review does not automatically replay saved narration",
+        "passed": true
+      },
+      {
+        "test": "Integrated controls match characters and navigation cancels stale speech",
+        "passed": true
+      }
+    ],
+    "cinematic": [
+      {
+        "test": "Opening contains three exact approved scenes and one explicitly proposed link",
+        "passed": true
+      },
+      {
+        "test": "Start displays welcome and does not advance based on a timer",
+        "passed": true
+      },
+      {
+        "test": "Speech completion advances scenes in order",
+        "passed": true
+      },
+      {
+        "test": "Pause defers speech-end advancement and invokes speech pause hook",
+        "passed": true
+      },
+      {
+        "test": "Resume consumes deferred completion once",
+        "passed": true
+      },
+      {
+        "test": "Final speech completion reveals continuation without navigating to learning",
+        "passed": true
+      },
+      {
+        "test": "Replay resets opening; old callbacks cannot skip the new first scene",
+        "passed": true
+      },
+      {
+        "test": "Skip cancels pending speech and reveals continuation",
+        "passed": true
+      },
+      {
+        "test": "Manual next works without audio and cannot run after cancellation",
+        "passed": true
+      },
+      {
+        "test": "Initial load without user activation makes no autoplay attempt",
+        "passed": true
+      },
+      {
+        "test": "Allowed user activation starts narration and subsequent lines start automatically",
+        "passed": true
+      },
+      {
+        "test": "Blocked browser policy returns an actionable state",
+        "passed": true
+      },
+      {
+        "test": "No-start watchdog reports blocked playback without advancing dialogue",
+        "passed": true
+      },
+      {
+        "test": "Watchdog cannot stop a started line or a newer scene",
+        "passed": true
+      },
+      {
+        "test": "Pause before speech starts cancels queued audio; resume retries current line",
+        "passed": true
+      },
+      {
+        "test": "Mute remains effective across automatic scene narration",
+        "passed": true
+      }
+    ],
+    "immersive": [
+      {
+        "test": "Four dialogue lines share exactly three visual scenes",
+        "passed": true
+      },
+      {
+        "test": "Display copy stays unvowelled and speech candidates preserve every base letter",
+        "passed": true
+      },
+      {
+        "test": "Legacy learning dialogue normalizes to new canonical fields without rewriting",
+        "passed": true
+      },
+      {
+        "test": "Explicit speech text and audio source are preserved",
+        "passed": true
+      },
+      {
+        "test": "Pronunciation candidates affect only known ambiguous words",
+        "passed": true
+      },
+      {
+        "test": "Prefer he-IL and exclude unrelated voices",
+        "passed": true
+      },
+      {
+        "test": "No voice is labelled female without manual listening confirmation",
+        "passed": true
+      },
+      {
+        "test": "Manually verified female preference survives local storage",
+        "passed": true
+      },
+      {
+        "test": "Unavailable saved voice uses honest unverified fallback",
+        "passed": true
+      },
+      {
+        "test": "Denied browser storage does not prevent voice selection",
+        "passed": true
+      },
+      {
+        "test": "Corrupted storage payload is ignored safely",
+        "passed": true
+      },
+      {
+        "test": "Untested niqqud is not used in normal narration",
+        "passed": true
+      },
+      {
+        "test": "Verified pronunciation uses separate speechText and keeps display unchanged",
+        "passed": true
+      },
+      {
+        "test": "Development comparison never advances the learning dialogue",
+        "passed": true
+      },
+      {
+        "test": "Voice preview is restricted to explicit local development URL",
+        "passed": true
+      },
+      {
+        "test": "Development UI enumerates voices with manual female and pronunciation checks",
+        "passed": true
+      },
+      {
+        "test": "Background configuration uses the supplied entrance, panorama and untouched staircase asset",
+        "passed": true
+      },
+      {
+        "test": "Background switches preserve the current image until the next loads",
+        "passed": true
+      },
+      {
+        "test": "Delayed background loads cannot restore an old scene",
+        "passed": true
+      },
+      {
+        "test": "Prerecorded audioSrc can play without an installed Hebrew voice",
+        "passed": true
+      },
+      {
+        "test": "Late Hebrew voices narrate the current enabled line, not an old scene",
+        "passed": true
+      }
+    ]
+  },
+  "scopeChecks": {
+    "js/secret-1.js": true,
+    "js/secret-2.js": true,
+    "js/secret-3.js": true,
+    "js/assessment.js": true,
+    "js/learning-flow.js": true,
+    "js/content.js": true
+  },
+  "assetIntegrity": {
+    "ארבע בועות דיבור דקורטיביות בזהב וטורקיז.png": true,
+    "גיליון כפתורים מעוטרים בשלושה צבעים.png": true,
+    "גליון כפתורים מוזהבים בתשעה מצבים.png": true,
+    "חמישה תנוחות של ינשופת ספרנית.png": true,
+    "חמשת מצבי הרוח של תולי წიგნიერ.png": true,
+    "כניסה קסומה לספריית בין השורות.png": true,
+    "כרטיס פרטי ספר מעוטר בעברית.png": true,
+    "מסגרת משחק וינטג׳ מוזהבת על קלף.png": true,
+    "מסגרת משחק וינטג׳ מוזהבת עם עיטורי כוכבים.png": true,
+    "ספרייה קלאסית עם מדרגות לולייניות.png": true,
+    "ספרייה קסומה באור זהוב.png": true,
+    "ספריית קסמים מוזהבת ומפוארת.png": true
+  },
+  "staticChecks": {
+    "oneHtmlDocument": true,
+    "uniqueIds": true,
+    "noStagePaperPanels": true,
+    "persistentBackgroundLayers": true,
+    "viewportFillingImages": true,
+    "noLargeSceneBackground": true,
+    "mobileLayout": true,
+    "reducedMotion": true,
+    "correctEntranceName": true,
+    "threeSceneStates": true
+  },
+  "httpChecks": {
+    "index.html": 200,
+    "js/main.js": 200,
+    "js/library-environment.js": 200,
+    "js/dialogue-data.js": 200,
+    "js/voice-preferences.js": 200,
+    "js/voice-preview.js": 200,
+    "js/dialogue-controller.js": 200,
+    "js/speech-controller.js": 200,
+    "js/cinematic-intro.js": 200,
+    "css/styles.css": 200,
+    "assets/כניסה קסומה לספריית בין השורות.png": 200,
+    "assets/ספרייה קלאסית עם מדרגות לולייניות.png": 200,
+    "assets/ספרייה קסומה באור זהוב.png": 200
+  },
+  "browser": "Attempt to open local preview returned: The browser access host is unavailable. Actual voice inventory, female voice verification, niqqud comparison, keyboard and responsive rendering not tested."
+}

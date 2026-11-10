@@ -28,9 +28,9 @@ export function createBookCard(book, { highlight = null, interactiveSurname = fa
   figure.append(card, caption); return figure;
 }
 
-export function createDialogue(text) {
+export function createDialogue(text, speaker = 'הינשופה') {
   const block = document.createElement('div'); block.className = 'guide-dialogue';
-  const label = document.createElement('strong'); label.textContent = 'הינשופה';
+  const label = document.createElement('strong'); label.textContent = speaker;
   const copy = document.createElement('p'); copy.textContent = text;
   block.append(label, copy); return block;
 }

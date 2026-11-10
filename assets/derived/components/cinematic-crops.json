@@ -1,0 +1,43 @@
+{
+  "bubbleSource": "assets/ארבע בועות דיבור דקורטיביות בזהב וטורקיז.png",
+  "tuliSource": "חמשת מצבי הרוח של תולי წიგნიერ.png",
+  "crops": [
+    {
+      "Name": null,
+      "X": null,
+      "Y": null,
+      "W": null,
+      "H": null
+    },
+    {
+      "Name": null,
+      "X": null,
+      "Y": null,
+      "W": null,
+      "H": null
+    },
+    {
+      "Name": null,
+      "X": null,
+      "Y": null,
+      "W": null,
+      "H": null
+    },
+    {
+      "Name": null,
+      "X": null,
+      "Y": null,
+      "W": null,
+      "H": null
+    }
+  ],
+  "mask": {
+    "output": "speech-rect-bottom.png",
+    "x": 0,
+    "y": 80,
+    "width": 510,
+    "height": 70,
+    "operation": "Clear neighboring bubble fragment and exterior to transparency; selected frame and tail preserved"
+  },
+  "originalsUnchanged": true
+}

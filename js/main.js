@@ -1,57 +1,48 @@
+import { initDialogueController } from './dialogue-controller.js';
+import { initVoicePreview, voicePreviewEnabled } from './voice-preview.js';
 import { approved } from './content.js';
-import { sampleBook, sampleAuthors } from './provisional-content.js';
+import { sampleBook, introMedia } from './provisional-content.js';
 import { createBookCard, createDialogue } from './components.js';
+import { initSecret1 } from './secret-1.js';
+import { initSecret2 } from './secret-2.js';
+import { initSecret3 } from './secret-3.js';
+import { initLearningFlow } from './learning-flow.js';
+import { initAssessment } from './assessment.js';
 
 document.querySelectorAll('[data-copy]').forEach(node => { node.textContent = approved[node.dataset.copy]; });
-document.querySelectorAll('[data-dialogue]').forEach(node => { node.append(createDialogue(approved[node.dataset.dialogue])); });
+document.querySelectorAll('[data-dialogue]').forEach(node => node.append(createDialogue(approved[node.dataset.dialogue])));
 document.querySelectorAll('[data-book-card]').forEach(node => node.append(createBookCard(sampleBook)));
-
 approved.scenes.forEach((scene, index) => {
   const article = document.createElement('article'); article.className = 'story-scene';
-  const label = document.createElement('h3'); label.textContent = `${index + 1} · ${scene.speaker}`; article.append(label);
+  const label = document.createElement('h3'); label.textContent = (index + 1) + ' · ' + scene.speaker; article.append(label);
   scene.lines.forEach(line => { const p = document.createElement('p'); p.textContent = line; article.append(p); });
   document.querySelector('#opening-scenes').append(article);
 });
-approved.books.forEach((book, index) => {
-  const li = document.createElement('li'); const bookElement = document.createElement('div');
-  bookElement.className = 'discovery-book';
-  const number = document.createElement('span'); number.className = 'book-number'; number.textContent = index + 1;
-  const title = document.createElement('span'); title.textContent = book.title;
-  bookElement.append(number, title); li.append(bookElement); document.querySelector('#discovery-books').append(li);
-});
-approved.genres.forEach(genre => {
-  const shelf = document.createElement('div'); shelf.className = 'genre-shelf';
-  const sign = document.createElement('h3'); sign.className = 'shelf-sign'; sign.textContent = genre;
-  const spines = document.createElement('div'); spines.className = 'decorative-spines'; spines.setAttribute('aria-hidden', 'true');
-  for (let i = 0; i < 7; i++) spines.append(document.createElement('span'));
-  shelf.append(sign, spines); document.querySelector('#genre-shelves').append(shelf);
-});
-sampleAuthors.forEach(author => {
-  const li = document.createElement('li'); const first = document.createElement('span'); first.textContent = author.firstName;
-  const last = document.createElement('strong'); last.textContent = author.surname; li.append(first, last); document.querySelector('#author-books').append(li);
-});
-// Static shuffled presentation only; ordering, scoring and feedback are out of scope.
-[2, 0, 1].forEach(index => {
-  const li = document.createElement('li'); li.textContent = approved.assessmentSteps[index]; document.querySelector('#assessment-cards').append(li);
-});
+document.querySelector('#secret-3-tuli-introduction').append(createDialogue(approved.secret3TuliIntroduction, 'תולי'));
+approved.completionSummary.forEach(text => { const li = document.createElement('li'); li.textContent = text; document.querySelector('#completion-summary').append(li); });
 
-// Generic dialog preview: this does not unlock books or run a learning activity.
-const dialog = document.querySelector('#component-dialog');
-document.querySelector('#dialog-copy').textContent = approved.books[2].text;
-let opener;
-document.querySelector('#open-component-preview').addEventListener('click', event => { opener = event.currentTarget; dialog.showModal(); });
-dialog.querySelectorAll('.close-dialog, .close-dialog-action').forEach(button => button.addEventListener('click', () => dialog.close()));
-dialog.addEventListener('close', () => opener?.focus());
-dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
-
-// Keep location indication separate from any future learning progress.
-const links = [...document.querySelectorAll('.nav-links a')];
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const link = links.find(a => a.hash === `#${entry.target.id}`);
-    if (!link) return;
-    links.forEach(a => a.removeAttribute('aria-current')); link.setAttribute('aria-current', 'location');
-  }), { rootMargin: '-15% 0px -65% 0px' });
-  links.forEach(a => { const section = document.querySelector(a.hash); if (section) observer.observe(section); });
+// Future media replaces the storyboard only when a real video is supplied.
+if (introMedia.video) {
+  const fragment = document.querySelector('#intro-video-template').content.cloneNode(true);
+  const video = fragment.querySelector('video'); video.src = introMedia.video;
+  if (introMedia.poster) video.poster = introMedia.poster;
+  const track = fragment.querySelector('track');
+  if (introMedia.captions) track.src = introMedia.captions; else track.remove();
+  document.querySelector('#intro-media').append(fragment);
+  document.querySelector('#intro-storyboard').hidden = true;
+  document.querySelector('#intro-continue').hidden = false;
+  document.querySelector('#intro-pause').hidden = true;
 }
+document.querySelector('#intro-replay').addEventListener('click', () => {
+  const video = document.querySelector('#intro-media video');
+  if (video) { video.currentTime = 0; video.play().catch(() => video.focus()); }
+
+});
+const flow = initLearningFlow();
+initSecret1({ onComplete: () => flow.complete('secret-1') });
+initSecret2({ onComplete: () => flow.complete('secret-2') });
+initSecret3({ onComplete: () => flow.complete('secret-3') });
+initAssessment({ onComplete: () => { flow.complete('assessment'); flow.visit('completion'); } });
+
+const dialogue = initDialogueController({ video: !!introMedia.video });
+if (voicePreviewEnabled()) initVoicePreview(dialogue.speech);
